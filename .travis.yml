@@ -1,9 +1,10 @@
-
-
 sudo: false
 dist: trusty
-language: bash
+language: python
 services: docker
+
+python:
+  - 3.6
 
 script:
     - make -C wheels && git diff --exit-code
