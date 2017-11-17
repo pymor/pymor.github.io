@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import glob
@@ -28,5 +28,6 @@ for whl in glob.glob('{}/*whl'.format(target_dir)):
         continue
     python = '{}.{}'.format(*py_regex.match(whl).group(1))
     if python not in PYTHONS:
-        raise RuntimeError('cannot check {}, wrong python version {}'.format(whl, python))
+        print('cannot check {}, wrong python version {}'.format(whl, python))
+        continue
     _check(whl, python)
