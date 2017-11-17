@@ -17,7 +17,7 @@ target_dir = os.path.abspath(target_dir)
 def _check(whl, python):
     arg = ['docker', 'run', '-t', '-v', '{}:/io'.format(target_dir),
            'pymor/python:{}'.format(python),
-           'bash', '-c', 'sudo pip install /io/{}'.format(whl)]
+           'bash', '-c', 'pip install /io/{}'.format(whl)]
     return subprocess.check_call(arg)
 
 py_regex = re.compile('(?:.*\-cp)(\d\d)(?:\-.*\.whl)')
