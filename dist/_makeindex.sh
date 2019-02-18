@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-ls | egrep '(deb|zip|gz)' | perl -e 'print "<html><body><ul>"; while(<>) { chop $_;  print "<li><a href=\"./$_\">$_</a></li>";} print "</ul></body></html>"' > index.html
+ls | egrep '(xz|deb|zip|gz)' | perl -e 'print "<html><body><ul>"; while(<>) { chop $_;  print "<li><a href=\"./$_\">$_</a></li>";} print "</ul></body></html>"' > index.html
